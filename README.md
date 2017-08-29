@@ -26,6 +26,8 @@ If you'd like to get your hands a bit more dirty:
 
 2) You can use "init.py" to setup the models. Then with "single_model_predictions.py" you can get the predictions of a single network. Alternatively, after running "init.py". you can run "combo_prediction.py", to combine the 4 models (see the paper referenced above). If you'd like to train your own model, use "train.py". You can train the existing models (there're about 11 models defined in "ensai_model.py"), or just throw a bunch of layers together yourself and see if you come up with something magical. 
 
+[Slightly more documentation can be found here.] (http://ensai.readthedocs.io/en/latest/)
+
 Finally: We'd love to hear from you. Please let us know if you have any comments or suggestions, or if you have questions about the code or the procedure. 
 Also, if you'd like to contribute to this project please let us know.
 
