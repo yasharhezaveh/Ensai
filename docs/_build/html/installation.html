@@ -23,7 +23,7 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Template" href="readme.html" />
+    <link rel="next" title="&lt;no title&gt;" href="readme.html" />
     <link rel="prev" title="&lt;no title&gt;" href="history.html" /> 
   </head>
   <body>
@@ -34,7 +34,7 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="readme.html" title="Template"
+          <a href="readme.html" title="&lt;no title&gt;"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="history.html" title="&lt;no title&gt;"
@@ -50,10 +50,30 @@
             
   <div class="section" id="installation">
 <h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
-<p>Install the package with pip:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ pip install read-the-docs-template
+<p>You will need to have a working version of python. You’ll also need the following libraries/packages:</p>
+<ol class="arabic simple">
+<li>tensorflow (instruction here: <a class="reference external" href="https://www.tensorflow.org/install/">https://www.tensorflow.org/install/</a>)</li>
+<li>PIL</li>
+<li>scipy/numpy</li>
+<li>matplotlib (if you’d like to generate plots in the ipython notebook)</li>
+</ol>
+<p>Once you have these, you can simply clone the repository with git:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ git clone git@github.com:yasharhezaveh/Ensai.git
 </pre></div>
 </div>
+<p>Then, you’ll need to download these data files:</p>
+<ol class="arabic simple">
+<li><a class="reference external" href="https://stanford.box.com/s/7wtkx1fr77156uec8h8apqm9my0aevpi">The trained network weights</a></li>
+<li><a class="reference external" href="https://stanford.box.com/s/tb2lpk824kee22ah3gz5b50trbp30vyx">a sample of lensing images to demonstrate the tool</a></li>
+<li><a class="reference external" href="https://stanford.box.com/s/hn6l82pkmhm65xsls6g7tcjq63blj8v7">a few cosmic ray and artifact maps</a></li>
+</ol>
+<p>After downloading these either double click on them in Mac, or untar them from the commandline with:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ tar xvfz CosmicRays.tar
+$ tar xvfz SAURON_TEST.tar
+$ tar xvfz trained_weights.tar
+</pre></div>
+</div>
+<p>Make sure that the unpacked folders are inside “data/” folder in Ensai. Now you should be able to run the ipyn notebook or play with the python scripts!</p>
 </div>
 
 
@@ -67,7 +87,7 @@
                         title="previous chapter">&lt;no title&gt;</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="readme.html"
-                        title="next chapter">Template</a></p>
+                        title="next chapter">&lt;no title&gt;</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -96,7 +116,7 @@
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="readme.html" title="Template"
+          <a href="readme.html" title="&lt;no title&gt;"
              >next</a> |</li>
         <li class="right" >
           <a href="history.html" title="&lt;no title&gt;"

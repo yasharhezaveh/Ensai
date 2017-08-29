@@ -1,1 +1,1 @@
-.. include:: ../AUTHORS.rst
+Yashar D. Hezaveh
