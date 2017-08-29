@@ -1,7 +1,7 @@
 # Ensai: Lensing with Artificial Intelligence 
 Estimating parameters of strong gravitational lenses with convolutional neural networks.
 
-This code uses convolutional neural networks (using tensorflow) to estimate the parameters of strong gravitational lenses. Unfortunetly we're not very good at coding, so you'll find that the code is messy, not well documented, and crazily written. However, that shouldn't discourage you from trying it out. Because it's a pretty pretty cool thing: The code can recover the parameters of gravitational lenses in a fraction of a second. Something that used to take hundreds of hours!
+This code uses convolutional neural networks (with tensorflow) to estimate the parameters of strong gravitational lenses. Unfortunately we're not very good at coding, so you'll find that the code is messy, not well documented, and crazily written. However, that shouldn't discourage you from trying it out. Because it's a pretty pretty cool thing: The code can recover the parameters of gravitational lenses in a fraction of a second. Something that used to take hundreds of hours!
 
 
 The results of this work have been published in a Nature letter "Fast Automated Analysis of Strong Gravitational Lenses with Convolutional Neural Networks" (Hezaveh, Perreault Levasseur, Marshall, 2017) and another paper, "Uncertainties in Parameters Estimated with Neural Networks: Application to Strong Gravitational Lensing", submitted to the Astrophysical Journal Letters (Perreault Levasseur, Hezaveh, and Wechsler, 2017). In the next few months we'll be slowly making this code more user-friendly and extend it to more interesting and complex lensing configurations.
@@ -26,7 +26,7 @@ If you'd like to get your hands a bit more dirty:
 
 2) You can use "init.py" to setup the models. Then with "single_model_predictions.py" you can get the predictions of a single network. Alternatively, after running "init.py". you can run "combo_prediction.py", to combine the 4 models (see the paper referenced above). If you'd like to train your own model, use "train.py". You can train the existing models (there're about 11 models defined in "ensai_model.py"), or just throw a bunch of layers together yourself and see if you come up with something magical. 
 
-[Slightly more documentation can be found here.] (http://ensai.readthedocs.io/en/latest/)
+Slightly more documentation can be found here: http://ensai.readthedocs.io/en/latest/
 
 Finally: We'd love to hear from you. Please let us know if you have any comments or suggestions, or if you have questions about the code or the procedure. 
 Also, if you'd like to contribute to this project please let us know.
@@ -34,5 +34,5 @@ Also, if you'd like to contribute to this project please let us know.
 ** If you use this code for your research please cite these two papers: **
 
 1) Hezaveh, Perreault Levasseur, & Marshall 2017 
-2) Perreault Levasseur, Hezaveh, Wechsler, 2017 
+2) Perreault Levasseur, Hezaveh, & Wechsler, 2017 
 
