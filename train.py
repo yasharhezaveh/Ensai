@@ -37,6 +37,10 @@ ind_t = range(num_test_samples)
 train_cost = 0
 write_time = time.time()
 start_time = time.time()
+
+log_file = open("log_file.txt","w")
+log_file.close()
+
 for i_sample in range(1000000):
         if i_sample%1 == 0:
 
@@ -80,6 +84,11 @@ for i_sample in range(1000000):
 			# show the iteration number, training cost, validation cost, and the average time per iteration for training
                         print("                                         %0.4d    %0.4d    %0.5f    %0.5f    %0.5f   %0.3f"%(i_sample,i,train_cost,eval_cost,min_eval_cost,(time.time()-start_time)/print_per)) 
                         start_time = time.time()
+                        
+                        log_file = open("log_file.txt","a")
+                        log_file.write('%d ' % (i_sample) + ' '.join(map(str,sum_rms/num_chunks)) + ' %0.5f %0.5f\n' % (train_cost,eval_cost) )
+                        log_file.close()
+                        
                         if  SAVE & (eval_cost<min_eval_cost) & (n>20): # save file when validation cost drops
                                 print "saving weights to the disk (eval) ..."
                                 save_path = saver.save(sess, save_file)

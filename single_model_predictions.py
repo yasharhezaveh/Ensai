@@ -7,7 +7,7 @@ MeanSquareCost , y_conv_flipped = cost_tensor(y_conv)
 
 variables_to_restore =  slim.get_variables(scope="ENSAI/EN_Model" + str(model_to_fit) )    #list of variables to restore
 restore_file = "data/trained_weights/model_" + str(model_to_fit) + ".ckpt"    #path of file with network weights
-restorer = tf.train.Saver(variables_to_restore)    # a tf.train.Saver object used for restoring (or saving)
+restorer = tf.train.Saver([v for v in variables_to_restore if "Adam" not in v.name])    # a tf.train.Saver object used for restoring (or saving)
 
 
 
@@ -51,7 +51,7 @@ for it in range(num_chunks):
 	B = sess.run(y_conv_flipped , feed_dict={ x: xA})  # B is the same prediction with the ellipticity flipped
 	Predictions[ind_t[0+chunk_size*it:chunk_size+chunk_size*it],:]  = get_rotation_corrected(A,B,Y[ind_t[0+chunk_size*it:chunk_size+chunk_size*it],:])  # "Prediction" is now corrected for the flip.
 	sum_rms = sum_rms + np.std(Predictions[ind_t[0+chunk_size*it:chunk_size+chunk_size*it],:] -Y[ind_t[0+chunk_size*it:chunk_size+chunk_size*it],:],axis=0)
-	print(np.array_str( sum_rms/it  ,precision=2) )
+	print(np.array_str( sum_rms/(it+1)  ,precision=2) )
 
 
 
