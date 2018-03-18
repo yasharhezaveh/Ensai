@@ -17,7 +17,7 @@ n = 0
 for i_mod in models_to_combine:
 	variables_to_restore.append( slim.get_variables(scope="ENSAI/EN_Model" + str(i_mod) ) )
 	restore_file.append(  "data/trained_weights/model_" + str(i_mod) + ".ckpt" )
-	restorer.append( tf.train.Saver(variables_to_restore[n]) )
+	restorer.append( tf.train.Saver([v for v in variables_to_restore[n] if "Adam" not in v.name]) )
 	n = n + 1
 
 
@@ -102,6 +102,6 @@ for it in range(num_chunks):
         B = sess.run(y_conv_flipped , feed_dict={ x: xA})  # B is the same prediction with the ellipticity flipped
         Predictions[ind_t[0+chunk_size*it:chunk_size+chunk_size*it],:]  = get_rotation_corrected(A,B,Y[ind_t[0+chunk_size*it:chunk_size+chunk_size*it],:])  # "Prediction" is now corrected for the flip.
         sum_rms = sum_rms + np.std(Predictions[ind_t[0+chunk_size*it:chunk_size+chunk_size*it],:] -Y[ind_t[0+chunk_size*it:chunk_size+chunk_size*it],:],axis=0)
-        print("rms in the parameter difference: " + np.array_str( sum_rms/it  ,precision=2) )
+        print("rms in the parameter difference: " + np.array_str( sum_rms/(it+1)  ,precision=2) )
 
 
